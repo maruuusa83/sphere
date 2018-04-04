@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title></title>
+</head>
+<body>
+    <h1>Hello, world!</h1>
+    <form name="pictures" method="POST" enctype="multipart/form-data">
+        <input type="file" id="file_input" name="img0" onChange="send_pictures()">
+        <input type="button" value="send" onCliclk="send_pictures()">
+    </form>
+</body>
+
+<script>
+function send_pictures(){
+    var ele_type = document.createElement('input');
+    ele_type.setAttribute('type', 'hidden');
+    ele_type.setAttribute('name', 'type');
+    ele_type.setAttribute('value', 'upload_image');
+
+    var ele_num = document.createElement('input');
+    ele_num.setAttribute('type', 'hidden');
+    ele_num.setAttribute('name', 'num');
+    ele_num.setAttribute('value', '3');
+
+    var pics = document.forms['pictures'];
+    pics.appendChild(ele_type);
+    pics.appendChild(ele_num);
+
+    pics.method = 'POST';
+    pics.action = 'api';
+
+    pics.submit();
+};
+</script>
+</html>
