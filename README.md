@@ -1,6 +1,11 @@
 Sphere Server
 =============
 
+Stitch photos into sphere using maruuusa83/OpenCV.
+Use `omnidirectionalPicture` branch of maruuusa83/opencv if you want to try this repository.
+
+This stitcher will use the AKAZE features as feature detector.
+
 ## Build
 At first, execute make command to use C++ resources.
 ```
